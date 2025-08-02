@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MicanchitaBet</title>
+
+  <!-- Archivo que hace que se vea como app -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#047857" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #059669, #047857);
+      color: white;
+      text-align: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .container {
+      max-width: 400px;
+      margin: 40px auto;
+    }
+    .card {
+      background: white;
+      color: black;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      text-align: left;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      background: #059669;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
+    .ad {
+      background: white;
+      color: black;
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>MicanchitaBet</h1>
+  <p><em>“Aquí se juega, aquí se gana”</em></p>
+
+  <div class="container">
+    <div class="card">
+      <h2>Accede como:</h2>
+      <button onclick="alert('Panel de administrador: aprueba dueños y fondos.')" class="btn">Administrador</button>
+      <button onclick="alert('Dueño de cancha: crea partidos y recibe apuestas.')" class="btn">Dueño de Cancha</button>
+      <button onclick="alert('Juez: ingresa los resultados de los partidos.')" class="btn">Juez</button>
+      <button onclick="alert('Apostador: elige equipo y gana dinero.')" class="btn">Apostador</button>
+    </div>
+
+    <div class="ad">
+      <img src="https://placehold.co/300x150/10B981/FFFFFF?text=Apuesta+Segura" alt="Publicidad" style="width:100%;border-radius:6px;" />
+      <p style="margin:10px 0;">¡Gana con MicanchitaBet!</p>
+    </div>
+  </div>
+
+  <footer>
+    MicanchitaBet © 2025 | PWA para zonas rurales
+  </footer>
+
+  <!-- Este código ayuda a que funcione sin internet -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(reg => console.log('App lista para funcionar sin internet'))
+          .catch(err => console.log('Error:', err));
+      });
+    }
+  </script>
+
+</body>
+</html>
